@@ -15,11 +15,11 @@ class Command(BaseCommand):
 
         books_data = [
             ("Clean Code", "Robert C. Martin", "9780132350884", 5),
-            ("Introduction to Algorithms", "Cormen et al.", "9780262046305", 4),
-            ("Design Patterns", "Erich Gamma et al.", "9780201633610", 3),
+            ("Introduction to Algorithms", "Thomas H. Cormen", "9780262046305", 4),
+            ("Design Patterns", "Erich Gamma", "9780201633610", 3),
             ("The Pragmatic Programmer", "Andrew Hunt", "9780135957059", 4),
             ("Refactoring", "Martin Fowler", "9780134757599", 3),
-            ("You Don't Know JS", "Kyle Simpson", "9781098124045", 6),
+            ("You Don't Know JS Yet", "Kyle Simpson", "9781098124045", 6),
             ("The Alchemist", "Paulo Coelho", "9780061122415", 5),
             ("Sapiens", "Yuval Noah Harari", "9780062316110", 5),
             ("Atomic Habits", "James Clear", "9780735211292", 6),
@@ -43,8 +43,8 @@ class Command(BaseCommand):
         seed_records = [
             {
                 "book": books[0],
-                "student_name": "Anita Roy",
-                "student_roll_no": "CS21-001",
+                "student_name": "Aarav Deadline",
+                "student_roll_no": "CS24-001",
                 "borrowed_date": today - timedelta(days=25),
                 "due_date": today - timedelta(days=11),
                 "is_returned": True,
@@ -52,8 +52,8 @@ class Command(BaseCommand):
             },
             {
                 "book": books[1],
-                "student_name": "Rahul Das",
-                "student_roll_no": "CS21-014",
+                "student_name": "Nisha Compliance",
+                "student_roll_no": "CS24-014",
                 "borrowed_date": today - timedelta(days=18),
                 "due_date": today - timedelta(days=4),
                 "is_returned": True,
@@ -61,8 +61,8 @@ class Command(BaseCommand):
             },
             {
                 "book": books[2],
-                "student_name": "Mina Sen",
-                "student_roll_no": "CS21-032",
+                "student_name": "Rohan Last-Minute",
+                "student_roll_no": "CS24-032",
                 "borrowed_date": today - timedelta(days=30),
                 "due_date": today - timedelta(days=16),
                 "is_returned": False,
@@ -70,8 +70,8 @@ class Command(BaseCommand):
             },
             {
                 "book": books[3],
-                "student_name": "Farhan Ali",
-                "student_roll_no": "CS21-041",
+                "student_name": "Meera Extension-Request",
+                "student_roll_no": "CS24-041",
                 "borrowed_date": today - timedelta(days=22),
                 "due_date": today - timedelta(days=8),
                 "is_returned": False,
@@ -79,8 +79,8 @@ class Command(BaseCommand):
             },
             {
                 "book": books[4],
-                "student_name": "Riya Nair",
-                "student_roll_no": "CS21-055",
+                "student_name": "Kabir Calendar-Optimist",
+                "student_roll_no": "CS24-055",
                 "borrowed_date": today - timedelta(days=6),
                 "due_date": today + timedelta(days=8),
                 "is_returned": False,
@@ -88,8 +88,8 @@ class Command(BaseCommand):
             },
             {
                 "book": books[5],
-                "student_name": "Karan Mehta",
-                "student_roll_no": "CS21-060",
+                "student_name": "Pooja Tomorrow-Starter",
+                "student_roll_no": "CS24-060",
                 "borrowed_date": today - timedelta(days=3),
                 "due_date": today + timedelta(days=11),
                 "is_returned": False,
@@ -105,4 +105,4 @@ class Command(BaseCommand):
             book.available_copies = max(book.total_copies - active_count, 0)
             book.save(update_fields=["available_copies"])
 
-        self.stdout.write(self.style.SUCCESS("Seed data created successfully."))
+        self.stdout.write(self.style.SUCCESS("Seed data loaded. Deadlines are still undefeated."))
